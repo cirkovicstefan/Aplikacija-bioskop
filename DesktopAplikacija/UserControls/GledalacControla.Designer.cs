@@ -1,7 +1,7 @@
 ﻿
 namespace DesktopAplikacija.UserControls
 {
-    partial class Filmovi
+    partial class GledalacControla
     {
         /// <summary> 
         /// Required designer variable.
@@ -32,7 +32,7 @@ namespace DesktopAplikacija.UserControls
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewGledaoci = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.label4 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -52,7 +52,7 @@ namespace DesktopAplikacija.UserControls
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGledaoci)).BeginInit();
             this.tableLayoutPanel7.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
@@ -71,8 +71,8 @@ namespace DesktopAplikacija.UserControls
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1130, 647);
-            this.tableLayoutPanel1.TabIndex = 0;
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1107, 640);
+            this.tableLayoutPanel1.TabIndex = 1;
             // 
             // tableLayoutPanel2
             // 
@@ -81,12 +81,12 @@ namespace DesktopAplikacija.UserControls
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel6, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel7, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(239, 3);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(234, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.864275F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 93.13573F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(888, 641);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(870, 634);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // tableLayoutPanel6
@@ -94,24 +94,24 @@ namespace DesktopAplikacija.UserControls
             this.tableLayoutPanel6.ColumnCount = 2;
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.tableLayoutPanel6.Controls.Add(this.dataGridView1, 0, 0);
+            this.tableLayoutPanel6.Controls.Add(this.dataGridViewGledaoci, 0, 0);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 47);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 46);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(882, 591);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(864, 585);
             this.tableLayoutPanel6.TabIndex = 0;
             // 
-            // dataGridView1
+            // dataGridViewGledaoci
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(523, 585);
-            this.dataGridView1.TabIndex = 0;
+            this.dataGridViewGledaoci.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewGledaoci.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewGledaoci.Location = new System.Drawing.Point(3, 3);
+            this.dataGridViewGledaoci.Name = "dataGridViewGledaoci";
+            this.dataGridViewGledaoci.RowHeadersWidth = 51;
+            this.dataGridViewGledaoci.Size = new System.Drawing.Size(512, 579);
+            this.dataGridViewGledaoci.TabIndex = 0;
             // 
             // tableLayoutPanel7
             // 
@@ -129,7 +129,7 @@ namespace DesktopAplikacija.UserControls
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 1;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(882, 38);
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(864, 37);
             this.tableLayoutPanel7.TabIndex = 1;
             // 
             // label4
@@ -138,7 +138,7 @@ namespace DesktopAplikacija.UserControls
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(3, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(126, 38);
+            this.label4.Size = new System.Drawing.Size(123, 37);
             this.label4.TabIndex = 0;
             this.label4.Text = "Kriterijum pretrage:";
             // 
@@ -146,17 +146,17 @@ namespace DesktopAplikacija.UserControls
             // 
             this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(135, 5);
+            this.comboBox1.Location = new System.Drawing.Point(132, 4);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(126, 28);
+            this.comboBox1.Size = new System.Drawing.Size(123, 28);
             this.comboBox1.TabIndex = 1;
             // 
             // txtPretraga
             // 
             this.txtPretraga.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPretraga.Location = new System.Drawing.Point(267, 5);
+            this.txtPretraga.Location = new System.Drawing.Point(261, 5);
             this.txtPretraga.Name = "txtPretraga";
-            this.txtPretraga.Size = new System.Drawing.Size(258, 27);
+            this.txtPretraga.Size = new System.Drawing.Size(253, 27);
             this.txtPretraga.TabIndex = 2;
             // 
             // tableLayoutPanel3
@@ -172,7 +172,7 @@ namespace DesktopAplikacija.UserControls
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.960373F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30.01265F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 64.02698F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(230, 641);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(225, 634);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
             // tableLayoutPanel4
@@ -188,68 +188,68 @@ namespace DesktopAplikacija.UserControls
             this.tableLayoutPanel4.Controls.Add(this.label2, 1, 1);
             this.tableLayoutPanel4.Controls.Add(this.label3, 1, 2);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 41);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 40);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 3;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(224, 186);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(219, 184);
             this.tableLayoutPanel4.TabIndex = 0;
             // 
             // textBox1
             // 
             this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(125, 17);
+            this.textBox1.Location = new System.Drawing.Point(122, 17);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(96, 27);
+            this.textBox1.Size = new System.Drawing.Size(94, 27);
             this.textBox1.TabIndex = 3;
             // 
             // textBox2
             // 
             this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox2.Location = new System.Drawing.Point(125, 79);
+            this.textBox2.Location = new System.Drawing.Point(122, 78);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(96, 27);
+            this.textBox2.Size = new System.Drawing.Size(94, 27);
             this.textBox2.TabIndex = 4;
             // 
             // textBox3
             // 
             this.textBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox3.Location = new System.Drawing.Point(125, 141);
+            this.textBox3.Location = new System.Drawing.Point(122, 139);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(96, 27);
+            this.textBox3.Size = new System.Drawing.Size(94, 27);
             this.textBox3.TabIndex = 5;
             // 
             // label1
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(47, 11);
+            this.label1.Location = new System.Drawing.Point(46, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 40);
+            this.label1.Size = new System.Drawing.Size(70, 20);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Naziv filma *";
+            this.label1.Text = "Ime *";
             // 
             // label2
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(47, 83);
+            this.label2.Location = new System.Drawing.Point(46, 81);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 20);
+            this.label2.Size = new System.Drawing.Size(70, 20);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Trajanje *";
+            this.label2.Text = "Prezime*";
             // 
             // label3
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(47, 145);
+            this.label3.Location = new System.Drawing.Point(46, 143);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(72, 20);
+            this.label3.Size = new System.Drawing.Size(70, 20);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Žanr *";
+            this.label3.Text = "Email*";
             // 
             // tableLayoutPanel5
             // 
@@ -262,20 +262,20 @@ namespace DesktopAplikacija.UserControls
             this.tableLayoutPanel5.Controls.Add(this.btnIzmeni, 2, 0);
             this.tableLayoutPanel5.Controls.Add(this.btnObrisi, 3, 0);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 233);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 230);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 2;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 85F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(224, 405);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(219, 401);
             this.tableLayoutPanel5.TabIndex = 1;
             // 
             // btnDodaj
             // 
             this.btnDodaj.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDodaj.Location = new System.Drawing.Point(47, 15);
+            this.btnDodaj.Location = new System.Drawing.Point(46, 15);
             this.btnDodaj.Name = "btnDodaj";
-            this.btnDodaj.Size = new System.Drawing.Size(53, 29);
+            this.btnDodaj.Size = new System.Drawing.Size(52, 29);
             this.btnDodaj.TabIndex = 1;
             this.btnDodaj.Text = "Dodaj";
             this.btnDodaj.UseVisualStyleBackColor = true;
@@ -283,9 +283,9 @@ namespace DesktopAplikacija.UserControls
             // btnIzmeni
             // 
             this.btnIzmeni.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnIzmeni.Location = new System.Drawing.Point(106, 15);
+            this.btnIzmeni.Location = new System.Drawing.Point(104, 15);
             this.btnIzmeni.Name = "btnIzmeni";
-            this.btnIzmeni.Size = new System.Drawing.Size(53, 29);
+            this.btnIzmeni.Size = new System.Drawing.Size(52, 29);
             this.btnIzmeni.TabIndex = 2;
             this.btnIzmeni.Text = "Izmeni";
             this.btnIzmeni.UseVisualStyleBackColor = true;
@@ -293,24 +293,24 @@ namespace DesktopAplikacija.UserControls
             // btnObrisi
             // 
             this.btnObrisi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnObrisi.Location = new System.Drawing.Point(165, 15);
+            this.btnObrisi.Location = new System.Drawing.Point(162, 15);
             this.btnObrisi.Name = "btnObrisi";
-            this.btnObrisi.Size = new System.Drawing.Size(56, 29);
+            this.btnObrisi.Size = new System.Drawing.Size(54, 29);
             this.btnObrisi.TabIndex = 3;
             this.btnObrisi.Text = "Obrisi";
             this.btnObrisi.UseVisualStyleBackColor = true;
             // 
-            // Filmovi
+            // Gledalac
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "Filmovi";
-            this.Size = new System.Drawing.Size(1130, 647);
+            this.Name = "Gledalac";
+            this.Size = new System.Drawing.Size(1107, 640);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGledaoci)).EndInit();
             this.tableLayoutPanel7.ResumeLayout(false);
             this.tableLayoutPanel7.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
@@ -325,23 +325,23 @@ namespace DesktopAplikacija.UserControls
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
-        private System.Windows.Forms.Button btnDodaj;
-        private System.Windows.Forms.Button btnIzmeni;
-        private System.Windows.Forms.Button btnObrisi;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewGledaoci;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.TextBox txtPretraga;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
+        private System.Windows.Forms.Button btnDodaj;
+        private System.Windows.Forms.Button btnIzmeni;
+        private System.Windows.Forms.Button btnObrisi;
     }
 }

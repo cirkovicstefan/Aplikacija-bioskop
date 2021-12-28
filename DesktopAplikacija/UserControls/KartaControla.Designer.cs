@@ -1,7 +1,7 @@
 ﻿
 namespace DesktopAplikacija.UserControls
 {
-    partial class Karta
+    partial class KartaControla
     {
         /// <summary> 
         /// Required designer variable.

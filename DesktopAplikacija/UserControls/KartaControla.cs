@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace DesktopAplikacija.UserControls
 {
-    public partial class Karta : UserControl
+    public partial class KartaControla : UserControl
     {
-        public Karta()
+        public KartaControla()
         {
             InitializeComponent();
         }

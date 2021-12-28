@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace DesktopAplikacija.UserControls
 {
-    public partial class Filmovi : UserControl
+    public partial class FilmControla : UserControl
     {
-        public Filmovi()
+        public FilmControla()
         {
             InitializeComponent();
         }

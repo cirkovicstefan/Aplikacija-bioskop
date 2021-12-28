@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace DesktopAplikacija.UserControls
 {
-    public partial class Gledalac : UserControl
+    public partial class SaleControl : UserControl
     {
-        public Gledalac()
+        public SaleControl()
         {
             InitializeComponent();
         }
