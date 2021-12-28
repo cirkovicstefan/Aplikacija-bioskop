@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DesktopAplikacija.UserControls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,5 +19,12 @@ namespace DesktopAplikacija
             this.WindowState = FormWindowState.Maximized;
         }
 
+        private void btnFilm_Click(object sender, EventArgs e)
+        {
+            Filmovi filmovi = new Filmovi();
+            filmovi.Dock = DockStyle.Fill;
+            panelPrikaz.Controls.Clear();
+            panelPrikaz.Controls.Add(filmovi);
+        }
     }
 }
