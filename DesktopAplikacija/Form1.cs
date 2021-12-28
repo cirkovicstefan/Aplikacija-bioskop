@@ -21,10 +21,34 @@ namespace DesktopAplikacija
 
         private void btnFilm_Click(object sender, EventArgs e)
         {
-            Filmovi filmovi = new Filmovi();
+            FilmControla filmovi = new FilmControla();
             filmovi.Dock = DockStyle.Fill;
             panelPrikaz.Controls.Clear();
             panelPrikaz.Controls.Add(filmovi);
+        }
+
+        private void btnGledalac_Click(object sender, EventArgs e)
+        {
+            GledalacControla gledalac = new GledalacControla();
+            gledalac.Dock = DockStyle.Fill;
+            panelPrikaz.Controls.Clear();
+            panelPrikaz.Controls.Add(gledalac);
+        }
+
+        private void btnSale_Click(object sender, EventArgs e)
+        {
+            SaleControl saleControl = new SaleControl();
+            saleControl.Dock = DockStyle.Fill;
+            panelPrikaz.Controls.Clear();
+            panelPrikaz.Controls.Add(saleControl);
+        }
+
+        private void btnKarta_Click(object sender, EventArgs e)
+        {
+            KartaControla kartaControla = new KartaControla();
+            kartaControla.Dock = DockStyle.Fill;
+            panelPrikaz.Controls.Clear();
+            panelPrikaz.Controls.Add(kartaControla);
         }
     }
 }

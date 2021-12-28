@@ -35,6 +35,8 @@ namespace DesktopAplikacija
             this.btnKarta = new System.Windows.Forms.Button();
             this.btnGledalac = new System.Windows.Forms.Button();
             this.btnFilm = new System.Windows.Forms.Button();
+            this.btnSale = new System.Windows.Forms.Button();
+            this.btnPrikazivanjeFilma = new System.Windows.Forms.Button();
             this.btnZarada = new System.Windows.Forms.Button();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -70,7 +72,9 @@ namespace DesktopAplikacija
             this.tableLayoutPanel2.Controls.Add(this.btnKarta, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.btnGledalac, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.btnFilm, 0, 3);
-            this.tableLayoutPanel2.Controls.Add(this.btnZarada, 0, 4);
+            this.tableLayoutPanel2.Controls.Add(this.btnSale, 0, 4);
+            this.tableLayoutPanel2.Controls.Add(this.btnPrikazivanjeFilma, 0, 5);
+            this.tableLayoutPanel2.Controls.Add(this.btnZarada, 0, 6);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -95,6 +99,7 @@ namespace DesktopAplikacija
             this.btnKarta.Size = new System.Drawing.Size(81, 75);
             this.btnKarta.TabIndex = 0;
             this.btnKarta.UseVisualStyleBackColor = true;
+            this.btnKarta.Click += new System.EventHandler(this.btnKarta_Click);
             // 
             // btnGledalac
             // 
@@ -105,6 +110,7 @@ namespace DesktopAplikacija
             this.btnGledalac.Size = new System.Drawing.Size(81, 75);
             this.btnGledalac.TabIndex = 1;
             this.btnGledalac.UseVisualStyleBackColor = true;
+            this.btnGledalac.Click += new System.EventHandler(this.btnGledalac_Click);
             // 
             // btnFilm
             // 
@@ -117,14 +123,35 @@ namespace DesktopAplikacija
             this.btnFilm.UseVisualStyleBackColor = true;
             this.btnFilm.Click += new System.EventHandler(this.btnFilm_Click);
             // 
+            // btnSale
+            // 
+            this.btnSale.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSale.Image = ((System.Drawing.Image)(resources.GetObject("btnSale.Image")));
+            this.btnSale.Location = new System.Drawing.Point(3, 327);
+            this.btnSale.Name = "btnSale";
+            this.btnSale.Size = new System.Drawing.Size(81, 75);
+            this.btnSale.TabIndex = 5;
+            this.btnSale.UseVisualStyleBackColor = true;
+            this.btnSale.Click += new System.EventHandler(this.btnSale_Click);
+            // 
+            // btnPrikazivanjeFilma
+            // 
+            this.btnPrikazivanjeFilma.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnPrikazivanjeFilma.Image = ((System.Drawing.Image)(resources.GetObject("btnPrikazivanjeFilma.Image")));
+            this.btnPrikazivanjeFilma.Location = new System.Drawing.Point(3, 408);
+            this.btnPrikazivanjeFilma.Name = "btnPrikazivanjeFilma";
+            this.btnPrikazivanjeFilma.Size = new System.Drawing.Size(81, 75);
+            this.btnPrikazivanjeFilma.TabIndex = 6;
+            this.btnPrikazivanjeFilma.UseVisualStyleBackColor = true;
+            // 
             // btnZarada
             // 
             this.btnZarada.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnZarada.Image = ((System.Drawing.Image)(resources.GetObject("btnZarada.Image")));
-            this.btnZarada.Location = new System.Drawing.Point(3, 327);
+            this.btnZarada.Location = new System.Drawing.Point(3, 489);
             this.btnZarada.Name = "btnZarada";
             this.btnZarada.Size = new System.Drawing.Size(81, 75);
-            this.btnZarada.TabIndex = 3;
+            this.btnZarada.TabIndex = 7;
             this.btnZarada.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel3
@@ -195,7 +222,7 @@ namespace DesktopAplikacija
             this.ClientSize = new System.Drawing.Size(1042, 658);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Bioskop";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
@@ -219,6 +246,8 @@ namespace DesktopAplikacija
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelIme;
         private System.Windows.Forms.Panel panelPrikaz;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnSale;
+        private System.Windows.Forms.Button btnPrikazivanjeFilma;
         private System.Windows.Forms.Button btnZarada;
     }
 }
