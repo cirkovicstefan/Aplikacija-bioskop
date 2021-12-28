@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Common.Interface.Business
 {
-    public interface IGledalac
+    public interface IGledalacBusiness
     {
         bool Dodaj(Gledalac gledalac);
         bool Izmeni(Gledalac gledalac);
