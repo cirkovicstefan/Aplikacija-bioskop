@@ -25,10 +25,7 @@ namespace DataAccessLayers
 
         => BaseConnection.ExecuteNonQuerySqlCommand($"DELETE FROM film WHERE id_filma={idFilma}");
 
-        public List<Film> PretragaFilmova(string by, Film film)
-        {
-            throw new System.NotImplementedException();
-        }
+       
 
         public List<Film> SviFilmovi()
         {

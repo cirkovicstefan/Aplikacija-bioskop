@@ -14,5 +14,6 @@ namespace Common.Interface.Repository
         bool Obrisi(SeIgraUSali seIgraUSali);
         List<SeIgraUSali> SviSeIgraUSali();
         bool SetBrojKarti(SeIgraUSali seIgraUSali);
+        List<SeIgraUSali> Pretraga(string by, Film film);
     }
 }

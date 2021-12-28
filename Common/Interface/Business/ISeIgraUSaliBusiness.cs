@@ -13,5 +13,6 @@ namespace Common.Interface.Business
         bool Izmeni(SeIgraUSali seIgraUSali);
         bool Obrisi(SeIgraUSali seIgraUSali);
         List<SeIgraUSali> SviSeIgraUSali();
+        List<SeIgraUSali> Pretraga(string by, Film film);
     }
 }
