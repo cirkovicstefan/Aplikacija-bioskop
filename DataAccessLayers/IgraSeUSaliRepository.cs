@@ -34,9 +34,15 @@ namespace DataAccessLayers
 
         public List<SeIgraUSali> SviSeIgraUSali()
         {
-            List<SeIgraUSali> retuSeIgraUSalis = new List<SeIgraUSali>();
-            string query = $"SELECT se.*,f.*,s.* FROM seigrausali se INNER JOIN film f  ON" +
+            string query = query = $"SELECT se.*,f.*,s.* FROM seigrausali se INNER JOIN film f  ON" +
                 $" se.id_filma=f.id_filma INNER JOIN sala s ON s.id_sale=se.id_sale";
+            return SviSeIgraUSaliInternal(query);
+        }
+
+        private List<SeIgraUSali> SviSeIgraUSaliInternal(string query)
+        {
+            List<SeIgraUSali> retuSeIgraUSalis = new List<SeIgraUSali>();
+      
             using (SqlCommand sqlCommand = BaseConnection.GetSqlCommand(query))
             {
                 SqlDataReader reader = sqlCommand.ExecuteReader();
@@ -68,6 +74,26 @@ namespace DataAccessLayers
             }
             return retuSeIgraUSalis;
         }
+
+        public List<SeIgraUSali> Pretraga(string by, Film film)
+        {
+            string uslov = string.Empty;
+            string  query = $"SELECT se.*,f.*,s.* FROM seigrausali se INNER JOIN film f  ON" +
+                $" se.id_filma=f.id_filma INNER JOIN sala s ON s.id_sale=se.id_sale " +
+                $""+uslov;
+            switch (by)
+            {
+                case "Naziv":
+                    uslov = $" WHERE naziv_filma LIKE '%{film.Naziv}%'";
+                    return SviSeIgraUSaliInternal(query);
+                case "zanr":
+                    uslov = $" WHERE zanr LIKE '%{film.Zanr}%'";
+                    return SviSeIgraUSaliInternal(query);
+                default:
+                    return new List<SeIgraUSali>();
+            }
+        }
+
 
         public bool SetBrojKarti(SeIgraUSali seIgraUSali)
         {
