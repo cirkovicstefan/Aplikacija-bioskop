@@ -32,10 +32,7 @@ namespace BusinessLayer
 
         public bool Obrisi(int idFilma)
         {
-            foreach (var item in filmRepository.SviFilmovi())
-            {
-                if (item.IdFilma != idFilma) throw new Exception("Film koji zelite da obriste ne postoji!!!");
-            }
+           
             return filmRepository.Obrisi(idFilma);
         }
 

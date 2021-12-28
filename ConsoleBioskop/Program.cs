@@ -11,44 +11,17 @@ namespace ConsoleBioskop
         static void Main(string[] args)
         {
             IKartaBusiness kartaBusiness = new KartaBusiness();
-           Karta karta = new Karta()
+            IGledalacBusiness gledalacBusiness = new GledalacBusiness();
+            IFilmBusiness filmBusiness = new FilmBusiness();
+          
+            foreach(var item in filmBusiness.SviFilmovi())
             {
-                IdKarte = 1005,
-                IdFilma = 1,
-                IdGledaoca = 1,
-                IdSale = 1,
-                BrojSedista = 100,
-                Cena = 200,
-                DatumOdrzavanja = "25.12.2021"
-            };
-            Karta karta2 = new Karta()
-            {
-                IdKarte = 3,
-                IdFilma = 1,
-                IdGledaoca = 2,
-                IdSale = 1,
-                BrojSedista = 100,
-                Cena = 200,
-                DatumOdrzavanja = "25.12.2021"
-            };
-
-
-          Console.WriteLine(kartaBusiness.Dodaj(karta));
+                Console.WriteLine(item.Naziv+item.Zanr+item.Trajanje+item.IdFilma);
+            }
             
 
 
           
-            if (kartaBusiness.Obrisi(karta))
-            {
-                Console.WriteLine("uspesno");
-            }
-            else
-            {
-                Console.WriteLine("greska");
-            }
-
-            Console.WriteLine(kartaBusiness.ZaradaOdFilma("Alisa u zemlji cuda"));
-           
            
             
         }

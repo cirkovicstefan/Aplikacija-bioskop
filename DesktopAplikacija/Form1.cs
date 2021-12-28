@@ -42,5 +42,13 @@ namespace DesktopAplikacija
             panelPrikaz.Controls.Clear();
             panelPrikaz.Controls.Add(saleControl);
         }
+
+        private void btnKarta_Click(object sender, EventArgs e)
+        {
+            KartaControla kartaControla = new KartaControla();
+            kartaControla.Dock = DockStyle.Fill;
+            panelPrikaz.Controls.Clear();
+            panelPrikaz.Controls.Add(kartaControla);
+        }
     }
 }

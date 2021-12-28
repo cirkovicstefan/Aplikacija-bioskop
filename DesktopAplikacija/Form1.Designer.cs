@@ -99,6 +99,7 @@ namespace DesktopAplikacija
             this.btnKarta.Size = new System.Drawing.Size(81, 75);
             this.btnKarta.TabIndex = 0;
             this.btnKarta.UseVisualStyleBackColor = true;
+            this.btnKarta.Click += new System.EventHandler(this.btnKarta_Click);
             // 
             // btnGledalac
             // 

@@ -17,7 +17,7 @@ namespace DataAccessLayers
         public bool Izmeni(Gledalac gledalac)
         {
             string query = string.Format($"UPDATE gledalac SET email='{gledalac.Email}', " +
-                $"ime='{gledalac.Ime}', prezime='{gledalac.Prezime}'");
+                $"ime='{gledalac.Ime}', prezime='{gledalac.Prezime}' WHERE id_gledaoca='{gledalac.IdGledaoca}'");
             return BaseConnection.ExecuteNonQuerySqlCommand(query);
         }
 
@@ -38,9 +38,10 @@ namespace DataAccessLayers
                     while (reader.Read())
                     {
                         Gledalac gledalac = new Gledalac();
-                        gledalac.Email = reader.GetString(0);
-                        gledalac.Ime = reader.GetString(1);
-                        gledalac.Prezime = reader.GetString(2);
+                        gledalac.IdGledaoca = reader.GetInt32(0);
+                        gledalac.Email = reader.GetString(1);
+                        gledalac.Ime = reader.GetString(2);
+                        gledalac.Prezime = reader.GetString(3);
                         retlist.Add(gledalac);
                     }
                 }

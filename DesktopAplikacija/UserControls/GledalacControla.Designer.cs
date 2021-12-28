@@ -33,15 +33,19 @@ namespace DesktopAplikacija.UserControls
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridViewGledaoci = new System.Windows.Forms.DataGridView();
+            this.IdGledaoca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Prezime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.label4 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.txtPretraga = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtIme = new System.Windows.Forms.TextBox();
+            this.txtPrezime = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -105,13 +109,54 @@ namespace DesktopAplikacija.UserControls
             // 
             // dataGridViewGledaoci
             // 
+            this.dataGridViewGledaoci.AllowUserToAddRows = false;
+            this.dataGridViewGledaoci.AllowUserToDeleteRows = false;
             this.dataGridViewGledaoci.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewGledaoci.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IdGledaoca,
+            this.Ime,
+            this.Prezime,
+            this.Email});
             this.dataGridViewGledaoci.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewGledaoci.Location = new System.Drawing.Point(3, 3);
             this.dataGridViewGledaoci.Name = "dataGridViewGledaoci";
+            this.dataGridViewGledaoci.ReadOnly = true;
             this.dataGridViewGledaoci.RowHeadersWidth = 51;
             this.dataGridViewGledaoci.Size = new System.Drawing.Size(512, 579);
             this.dataGridViewGledaoci.TabIndex = 0;
+            this.dataGridViewGledaoci.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewGledaoci_CellClick);
+            // 
+            // IdGledaoca
+            // 
+            this.IdGledaoca.HeaderText = "IdGledaoca";
+            this.IdGledaoca.MinimumWidth = 6;
+            this.IdGledaoca.Name = "IdGledaoca";
+            this.IdGledaoca.ReadOnly = true;
+            this.IdGledaoca.Width = 125;
+            // 
+            // Ime
+            // 
+            this.Ime.HeaderText = "Ime";
+            this.Ime.MinimumWidth = 6;
+            this.Ime.Name = "Ime";
+            this.Ime.ReadOnly = true;
+            this.Ime.Width = 225;
+            // 
+            // Prezime
+            // 
+            this.Prezime.HeaderText = "Prezime";
+            this.Prezime.MinimumWidth = 6;
+            this.Prezime.Name = "Prezime";
+            this.Prezime.ReadOnly = true;
+            this.Prezime.Width = 225;
+            // 
+            // Email
+            // 
+            this.Email.HeaderText = "Email";
+            this.Email.MinimumWidth = 6;
+            this.Email.Name = "Email";
+            this.Email.ReadOnly = true;
+            this.Email.Width = 308;
             // 
             // tableLayoutPanel7
             // 
@@ -181,9 +226,9 @@ namespace DesktopAplikacija.UserControls
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45F));
-            this.tableLayoutPanel4.Controls.Add(this.textBox1, 2, 0);
-            this.tableLayoutPanel4.Controls.Add(this.textBox2, 2, 1);
-            this.tableLayoutPanel4.Controls.Add(this.textBox3, 2, 2);
+            this.tableLayoutPanel4.Controls.Add(this.txtIme, 2, 0);
+            this.tableLayoutPanel4.Controls.Add(this.txtPrezime, 2, 1);
+            this.tableLayoutPanel4.Controls.Add(this.txtEmail, 2, 2);
             this.tableLayoutPanel4.Controls.Add(this.label1, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.label2, 1, 1);
             this.tableLayoutPanel4.Controls.Add(this.label3, 1, 2);
@@ -197,29 +242,29 @@ namespace DesktopAplikacija.UserControls
             this.tableLayoutPanel4.Size = new System.Drawing.Size(219, 184);
             this.tableLayoutPanel4.TabIndex = 0;
             // 
-            // textBox1
+            // txtIme
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(122, 17);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(94, 27);
-            this.textBox1.TabIndex = 3;
+            this.txtIme.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtIme.Location = new System.Drawing.Point(122, 17);
+            this.txtIme.Name = "txtIme";
+            this.txtIme.Size = new System.Drawing.Size(94, 27);
+            this.txtIme.TabIndex = 3;
             // 
-            // textBox2
+            // txtPrezime
             // 
-            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox2.Location = new System.Drawing.Point(122, 78);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(94, 27);
-            this.textBox2.TabIndex = 4;
+            this.txtPrezime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtPrezime.Location = new System.Drawing.Point(122, 78);
+            this.txtPrezime.Name = "txtPrezime";
+            this.txtPrezime.Size = new System.Drawing.Size(94, 27);
+            this.txtPrezime.TabIndex = 4;
             // 
-            // textBox3
+            // txtEmail
             // 
-            this.textBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox3.Location = new System.Drawing.Point(122, 139);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(94, 27);
-            this.textBox3.TabIndex = 5;
+            this.txtEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtEmail.Location = new System.Drawing.Point(122, 139);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(94, 27);
+            this.txtEmail.TabIndex = 5;
             // 
             // label1
             // 
@@ -279,6 +324,7 @@ namespace DesktopAplikacija.UserControls
             this.btnDodaj.TabIndex = 1;
             this.btnDodaj.Text = "Dodaj";
             this.btnDodaj.UseVisualStyleBackColor = true;
+            this.btnDodaj.Click += new System.EventHandler(this.btnDodaj_Click);
             // 
             // btnIzmeni
             // 
@@ -289,6 +335,7 @@ namespace DesktopAplikacija.UserControls
             this.btnIzmeni.TabIndex = 2;
             this.btnIzmeni.Text = "Izmeni";
             this.btnIzmeni.UseVisualStyleBackColor = true;
+            this.btnIzmeni.Click += new System.EventHandler(this.btnIzmeni_Click);
             // 
             // btnObrisi
             // 
@@ -299,14 +346,16 @@ namespace DesktopAplikacija.UserControls
             this.btnObrisi.TabIndex = 3;
             this.btnObrisi.Text = "Obrisi";
             this.btnObrisi.UseVisualStyleBackColor = true;
+            this.btnObrisi.Click += new System.EventHandler(this.btnObrisi_Click);
             // 
-            // Gledalac
+            // GledalacControla
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "Gledalac";
+            this.Name = "GledalacControla";
             this.Size = new System.Drawing.Size(1107, 640);
+            this.Load += new System.EventHandler(this.GledalacControla_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel6.ResumeLayout(false);
@@ -333,9 +382,9 @@ namespace DesktopAplikacija.UserControls
         private System.Windows.Forms.TextBox txtPretraga;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtIme;
+        private System.Windows.Forms.TextBox txtPrezime;
+        private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -343,5 +392,9 @@ namespace DesktopAplikacija.UserControls
         private System.Windows.Forms.Button btnDodaj;
         private System.Windows.Forms.Button btnIzmeni;
         private System.Windows.Forms.Button btnObrisi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdGledaoca;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Prezime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
     }
 }

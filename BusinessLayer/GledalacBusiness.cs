@@ -7,7 +7,7 @@ using System.Collections.Generic;
 
 namespace BusinessLayer
 {
-    class GledalacBusiness : IGledalacBusiness
+   public class GledalacBusiness : IGledalacBusiness
     {
         private readonly IGledalacRepository gledalacRepository;
 

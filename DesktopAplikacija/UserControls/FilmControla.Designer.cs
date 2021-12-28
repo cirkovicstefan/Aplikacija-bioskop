@@ -32,16 +32,20 @@ namespace DesktopAplikacija.UserControls
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewFilm = new System.Windows.Forms.DataGridView();
+            this.IdFilma = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Naziv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Trajanje = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Zanr = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.label4 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.txtPretraga = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtNaziv = new System.Windows.Forms.TextBox();
+            this.txtTrajanje = new System.Windows.Forms.TextBox();
+            this.txtZanr = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -52,7 +56,7 @@ namespace DesktopAplikacija.UserControls
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFilm)).BeginInit();
             this.tableLayoutPanel7.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
@@ -94,7 +98,7 @@ namespace DesktopAplikacija.UserControls
             this.tableLayoutPanel6.ColumnCount = 2;
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.tableLayoutPanel6.Controls.Add(this.dataGridView1, 0, 0);
+            this.tableLayoutPanel6.Controls.Add(this.dataGridViewFilm, 0, 0);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 47);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
@@ -103,15 +107,56 @@ namespace DesktopAplikacija.UserControls
             this.tableLayoutPanel6.Size = new System.Drawing.Size(882, 591);
             this.tableLayoutPanel6.TabIndex = 0;
             // 
-            // dataGridView1
+            // dataGridViewFilm
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(523, 585);
-            this.dataGridView1.TabIndex = 0;
+            this.dataGridViewFilm.AllowUserToAddRows = false;
+            this.dataGridViewFilm.AllowUserToDeleteRows = false;
+            this.dataGridViewFilm.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewFilm.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IdFilma,
+            this.Naziv,
+            this.Trajanje,
+            this.Zanr});
+            this.dataGridViewFilm.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewFilm.Location = new System.Drawing.Point(3, 3);
+            this.dataGridViewFilm.Name = "dataGridViewFilm";
+            this.dataGridViewFilm.ReadOnly = true;
+            this.dataGridViewFilm.RowHeadersWidth = 51;
+            this.dataGridViewFilm.Size = new System.Drawing.Size(523, 585);
+            this.dataGridViewFilm.TabIndex = 0;
+            this.dataGridViewFilm.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewFilm_CellClick);
+            // 
+            // IdFilma
+            // 
+            this.IdFilma.HeaderText = "Idfilma";
+            this.IdFilma.MinimumWidth = 6;
+            this.IdFilma.Name = "IdFilma";
+            this.IdFilma.ReadOnly = true;
+            this.IdFilma.Width = 125;
+            // 
+            // Naziv
+            // 
+            this.Naziv.HeaderText = "Naziv";
+            this.Naziv.MinimumWidth = 6;
+            this.Naziv.Name = "Naziv";
+            this.Naziv.ReadOnly = true;
+            this.Naziv.Width = 225;
+            // 
+            // Trajanje
+            // 
+            this.Trajanje.HeaderText = "Trajanje";
+            this.Trajanje.MinimumWidth = 6;
+            this.Trajanje.Name = "Trajanje";
+            this.Trajanje.ReadOnly = true;
+            this.Trajanje.Width = 225;
+            // 
+            // Zanr
+            // 
+            this.Zanr.HeaderText = "Zanr";
+            this.Zanr.MinimumWidth = 6;
+            this.Zanr.Name = "Zanr";
+            this.Zanr.ReadOnly = true;
+            this.Zanr.Width = 308;
             // 
             // tableLayoutPanel7
             // 
@@ -181,9 +226,9 @@ namespace DesktopAplikacija.UserControls
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45F));
-            this.tableLayoutPanel4.Controls.Add(this.textBox1, 2, 0);
-            this.tableLayoutPanel4.Controls.Add(this.textBox2, 2, 1);
-            this.tableLayoutPanel4.Controls.Add(this.textBox3, 2, 2);
+            this.tableLayoutPanel4.Controls.Add(this.txtNaziv, 2, 0);
+            this.tableLayoutPanel4.Controls.Add(this.txtTrajanje, 2, 1);
+            this.tableLayoutPanel4.Controls.Add(this.txtZanr, 2, 2);
             this.tableLayoutPanel4.Controls.Add(this.label1, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.label2, 1, 1);
             this.tableLayoutPanel4.Controls.Add(this.label3, 1, 2);
@@ -197,29 +242,29 @@ namespace DesktopAplikacija.UserControls
             this.tableLayoutPanel4.Size = new System.Drawing.Size(224, 186);
             this.tableLayoutPanel4.TabIndex = 0;
             // 
-            // textBox1
+            // txtNaziv
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(125, 17);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(96, 27);
-            this.textBox1.TabIndex = 3;
+            this.txtNaziv.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtNaziv.Location = new System.Drawing.Point(125, 17);
+            this.txtNaziv.Name = "txtNaziv";
+            this.txtNaziv.Size = new System.Drawing.Size(96, 27);
+            this.txtNaziv.TabIndex = 3;
             // 
-            // textBox2
+            // txtTrajanje
             // 
-            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox2.Location = new System.Drawing.Point(125, 79);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(96, 27);
-            this.textBox2.TabIndex = 4;
+            this.txtTrajanje.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtTrajanje.Location = new System.Drawing.Point(125, 79);
+            this.txtTrajanje.Name = "txtTrajanje";
+            this.txtTrajanje.Size = new System.Drawing.Size(96, 27);
+            this.txtTrajanje.TabIndex = 4;
             // 
-            // textBox3
+            // txtZanr
             // 
-            this.textBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox3.Location = new System.Drawing.Point(125, 141);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(96, 27);
-            this.textBox3.TabIndex = 5;
+            this.txtZanr.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtZanr.Location = new System.Drawing.Point(125, 141);
+            this.txtZanr.Name = "txtZanr";
+            this.txtZanr.Size = new System.Drawing.Size(96, 27);
+            this.txtZanr.TabIndex = 5;
             // 
             // label1
             // 
@@ -279,6 +324,7 @@ namespace DesktopAplikacija.UserControls
             this.btnDodaj.TabIndex = 1;
             this.btnDodaj.Text = "Dodaj";
             this.btnDodaj.UseVisualStyleBackColor = true;
+            this.btnDodaj.Click += new System.EventHandler(this.btnDodaj_Click);
             // 
             // btnIzmeni
             // 
@@ -289,6 +335,7 @@ namespace DesktopAplikacija.UserControls
             this.btnIzmeni.TabIndex = 2;
             this.btnIzmeni.Text = "Izmeni";
             this.btnIzmeni.UseVisualStyleBackColor = true;
+            this.btnIzmeni.Click += new System.EventHandler(this.btnIzmeni_Click);
             // 
             // btnObrisi
             // 
@@ -299,18 +346,20 @@ namespace DesktopAplikacija.UserControls
             this.btnObrisi.TabIndex = 3;
             this.btnObrisi.Text = "Obrisi";
             this.btnObrisi.UseVisualStyleBackColor = true;
+            this.btnObrisi.Click += new System.EventHandler(this.btnObrisi_Click);
             // 
-            // Filmovi
+            // FilmControla
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "Filmovi";
+            this.Name = "FilmControla";
             this.Size = new System.Drawing.Size(1130, 647);
+            this.Load += new System.EventHandler(this.FilmControla_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFilm)).EndInit();
             this.tableLayoutPanel7.ResumeLayout(false);
             this.tableLayoutPanel7.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
@@ -330,18 +379,22 @@ namespace DesktopAplikacija.UserControls
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtNaziv;
+        private System.Windows.Forms.TextBox txtTrajanje;
+        private System.Windows.Forms.TextBox txtZanr;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.Button btnDodaj;
         private System.Windows.Forms.Button btnIzmeni;
         private System.Windows.Forms.Button btnObrisi;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewFilm;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.TextBox txtPretraga;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdFilma;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Naziv;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Trajanje;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Zanr;
     }
 }
