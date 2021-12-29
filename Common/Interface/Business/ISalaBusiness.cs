@@ -13,5 +13,6 @@ namespace Common.Interface.Business
         bool Izmeni(Sala sala);
         bool Obrisi(int idSale);
         List<Sala> SveSale();
+        List<Sala> Pretraga(string by, Sala sala);
     }
 }

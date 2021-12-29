@@ -20,7 +20,7 @@ namespace DataAccessLayers
         {
             string query = $"UPDATE karta SET broj_sedista='{karta.BrojSedista}'," +
                 $"id_filma='{karta.IdFilma}',id_sale='{karta.IdSale}',id_gledaoca='{karta.IdGledaoca}'," +
-                $"cena='{karta.Cena}',datum_odrzavanja='{karta.DatumOdrzavanja}' WHERE id_karta='{karta.IdKarte}'";
+                $"cena='{karta.Cena}',datum_odrzavanja='{karta.DatumOdrzavanja}' WHERE id_karte='{karta.IdKarte}'";
             return BaseConnection.ExecuteNonQuerySqlCommand(query);
         }
 

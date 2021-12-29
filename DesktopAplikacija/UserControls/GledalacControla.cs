@@ -14,6 +14,8 @@ namespace DesktopAplikacija.UserControls
         {
             InitializeComponent();
             gledalacBusiness = new GledalacBusiness();
+            btnIzmeni.Enabled = false;
+            btnObrisi.Enabled = false;
         }
 
         private void btnDodaj_Click(object sender, EventArgs e)
@@ -119,6 +121,8 @@ namespace DesktopAplikacija.UserControls
                 txtIme.Text = dataGridViewGledaoci[1, row].Value.ToString();
                 txtPrezime.Text = dataGridViewGledaoci[2, row].Value.ToString();
                 txtEmail.Text = dataGridViewGledaoci[3, row].Value.ToString();
+                btnIzmeni.Enabled = !false;
+                btnObrisi.Enabled = !false;
             }
             catch
             {
