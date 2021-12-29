@@ -10,19 +10,9 @@ namespace ConsoleBioskop
     {
         static void Main(string[] args)
         {
-            IKartaBusiness kartaBusiness = new KartaBusiness();
-            IGledalacBusiness gledalacBusiness = new GledalacBusiness();
-            IFilmBusiness filmBusiness = new FilmBusiness();
-          
-            foreach(var item in filmBusiness.SviFilmovi())
-            {
-                Console.WriteLine(item.Naziv+item.Zanr+item.Trajanje+item.IdFilma);
-            }
-            
-
-
-          
-           
+            string str = "1 stefan";
+            str = str.Substring(2);
+            Console.WriteLine(str);
             
         }
     }
