@@ -50,5 +50,13 @@ namespace DesktopAplikacija
             panelPrikaz.Controls.Clear();
             panelPrikaz.Controls.Add(kartaControla);
         }
+
+        private void btnPrikazivanjeFilma_Click(object sender, EventArgs e)
+        {
+            PrikazivanjeFilma prikazivanjeFilma = new PrikazivanjeFilma();
+            prikazivanjeFilma.Dock = DockStyle.Fill;
+            panelPrikaz.Controls.Clear();
+            panelPrikaz.Controls.Add(prikazivanjeFilma);
+        }
     }
 }

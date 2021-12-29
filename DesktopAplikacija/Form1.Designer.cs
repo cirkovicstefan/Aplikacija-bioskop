@@ -143,6 +143,7 @@ namespace DesktopAplikacija
             this.btnPrikazivanjeFilma.Size = new System.Drawing.Size(81, 75);
             this.btnPrikazivanjeFilma.TabIndex = 6;
             this.btnPrikazivanjeFilma.UseVisualStyleBackColor = true;
+            this.btnPrikazivanjeFilma.Click += new System.EventHandler(this.btnPrikazivanjeFilma_Click);
             // 
             // btnZarada
             // 
