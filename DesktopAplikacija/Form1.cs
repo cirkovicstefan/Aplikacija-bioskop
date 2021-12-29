@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace DesktopAplikacija
 {
-    public partial class Form1 : Form
+    public partial class Bioskop : Form
     {
-        public Form1()
+        public Bioskop()
         {
             InitializeComponent();
             this.WindowState = FormWindowState.Maximized;
@@ -57,6 +57,22 @@ namespace DesktopAplikacija
             prikazivanjeFilma.Dock = DockStyle.Fill;
             panelPrikaz.Controls.Clear();
             panelPrikaz.Controls.Add(prikazivanjeFilma);
+        }
+
+        private void btnZarada_Click(object sender, EventArgs e)
+        {
+            ZaradaOdFilma zaradaOdFilma = new ZaradaOdFilma();
+            zaradaOdFilma.Dock = DockStyle.Fill;
+            panelPrikaz.Controls.Clear();
+            panelPrikaz.Controls.Add(zaradaOdFilma);
+        }
+
+        private void btnRadnik_Click(object sender, EventArgs e)
+        {
+            RadnikControla radnikControla = new RadnikControla();
+            radnikControla.Dock = DockStyle.Fill;
+            panelPrikaz.Controls.Clear();
+            panelPrikaz.Controls.Add(radnikControla);
         }
     }
 }
