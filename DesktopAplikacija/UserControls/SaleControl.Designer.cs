@@ -31,17 +31,20 @@ namespace DesktopAplikacija.UserControls
         {
             this.btnDodaj = new System.Windows.Forms.Button();
             this.btnObrisi = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtNaziv = new System.Windows.Forms.TextBox();
+            this.txtKapacitet = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnIzmeni = new System.Windows.Forms.Button();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.label4 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBoxKriterijum = new System.Windows.Forms.ComboBox();
             this.txtPretraga = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridViewSale = new System.Windows.Forms.DataGridView();
+            this.IdSale = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Naziv_sale = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Kapacitet_sale = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
@@ -66,6 +69,7 @@ namespace DesktopAplikacija.UserControls
             this.btnDodaj.TabIndex = 1;
             this.btnDodaj.Text = "Dodaj";
             this.btnDodaj.UseVisualStyleBackColor = true;
+            this.btnDodaj.Click += new System.EventHandler(this.btnDodaj_Click);
             // 
             // btnObrisi
             // 
@@ -76,22 +80,23 @@ namespace DesktopAplikacija.UserControls
             this.btnObrisi.TabIndex = 3;
             this.btnObrisi.Text = "Obrisi";
             this.btnObrisi.UseVisualStyleBackColor = true;
+            this.btnObrisi.Click += new System.EventHandler(this.btnObrisi_Click);
             // 
-            // textBox1
+            // txtNaziv
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(121, 15);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(92, 27);
-            this.textBox1.TabIndex = 3;
+            this.txtNaziv.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtNaziv.Location = new System.Drawing.Point(121, 15);
+            this.txtNaziv.Name = "txtNaziv";
+            this.txtNaziv.Size = new System.Drawing.Size(92, 27);
+            this.txtNaziv.TabIndex = 3;
             // 
-            // textBox2
+            // txtKapacitet
             // 
-            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox2.Location = new System.Drawing.Point(121, 73);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(92, 27);
-            this.textBox2.TabIndex = 4;
+            this.txtKapacitet.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtKapacitet.Location = new System.Drawing.Point(121, 73);
+            this.txtKapacitet.Name = "txtKapacitet";
+            this.txtKapacitet.Size = new System.Drawing.Size(92, 27);
+            this.txtKapacitet.TabIndex = 4;
             // 
             // label1
             // 
@@ -122,6 +127,7 @@ namespace DesktopAplikacija.UserControls
             this.btnIzmeni.TabIndex = 2;
             this.btnIzmeni.Text = "Izmeni";
             this.btnIzmeni.UseVisualStyleBackColor = true;
+            this.btnIzmeni.Click += new System.EventHandler(this.btnIzmeni_Click);
             // 
             // tableLayoutPanel4
             // 
@@ -129,8 +135,8 @@ namespace DesktopAplikacija.UserControls
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45F));
-            this.tableLayoutPanel4.Controls.Add(this.textBox1, 2, 0);
-            this.tableLayoutPanel4.Controls.Add(this.textBox2, 2, 1);
+            this.tableLayoutPanel4.Controls.Add(this.txtNaziv, 2, 0);
+            this.tableLayoutPanel4.Controls.Add(this.txtKapacitet, 2, 1);
             this.tableLayoutPanel4.Controls.Add(this.label1, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.label2, 1, 1);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -153,14 +159,14 @@ namespace DesktopAplikacija.UserControls
             this.label4.TabIndex = 0;
             this.label4.Text = "Kriterijum pretrage:";
             // 
-            // comboBox1
+            // comboBoxKriterijum
             // 
-            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(130, 3);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 28);
-            this.comboBox1.TabIndex = 1;
+            this.comboBoxKriterijum.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBoxKriterijum.FormattingEnabled = true;
+            this.comboBoxKriterijum.Location = new System.Drawing.Point(130, 3);
+            this.comboBoxKriterijum.Name = "comboBoxKriterijum";
+            this.comboBoxKriterijum.Size = new System.Drawing.Size(121, 28);
+            this.comboBoxKriterijum.TabIndex = 1;
             // 
             // txtPretraga
             // 
@@ -169,6 +175,7 @@ namespace DesktopAplikacija.UserControls
             this.txtPretraga.Name = "txtPretraga";
             this.txtPretraga.Size = new System.Drawing.Size(249, 27);
             this.txtPretraga.TabIndex = 2;
+            this.txtPretraga.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPretraga_KeyDown);
             // 
             // tableLayoutPanel7
             // 
@@ -179,7 +186,7 @@ namespace DesktopAplikacija.UserControls
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel7.Controls.Add(this.label4, 0, 0);
-            this.tableLayoutPanel7.Controls.Add(this.comboBox1, 1, 0);
+            this.tableLayoutPanel7.Controls.Add(this.comboBoxKriterijum, 1, 0);
             this.tableLayoutPanel7.Controls.Add(this.txtPretraga, 2, 0);
             this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel7.Location = new System.Drawing.Point(3, 3);
@@ -192,12 +199,39 @@ namespace DesktopAplikacija.UserControls
             // dataGridViewSale
             // 
             this.dataGridViewSale.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewSale.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IdSale,
+            this.Naziv_sale,
+            this.Kapacitet_sale});
             this.dataGridViewSale.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewSale.Location = new System.Drawing.Point(3, 3);
             this.dataGridViewSale.Name = "dataGridViewSale";
             this.dataGridViewSale.RowHeadersWidth = 51;
             this.dataGridViewSale.Size = new System.Drawing.Size(505, 549);
             this.dataGridViewSale.TabIndex = 0;
+            this.dataGridViewSale.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewSale_CellClick);
+            // 
+            // IdSale
+            // 
+            this.IdSale.HeaderText = "IdSale";
+            this.IdSale.MinimumWidth = 6;
+            this.IdSale.Name = "IdSale";
+            this.IdSale.Visible = false;
+            this.IdSale.Width = 125;
+            // 
+            // Naziv_sale
+            // 
+            this.Naziv_sale.HeaderText = "Naziv sale";
+            this.Naziv_sale.MinimumWidth = 6;
+            this.Naziv_sale.Name = "Naziv_sale";
+            this.Naziv_sale.Width = 379;
+            // 
+            // Kapacitet_sale
+            // 
+            this.Kapacitet_sale.HeaderText = "Kapacitet sale";
+            this.Kapacitet_sale.MinimumWidth = 6;
+            this.Kapacitet_sale.Name = "Kapacitet_sale";
+            this.Kapacitet_sale.Width = 379;
             // 
             // tableLayoutPanel2
             // 
@@ -285,6 +319,7 @@ namespace DesktopAplikacija.UserControls
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "SaleControl";
             this.Size = new System.Drawing.Size(1092, 608);
+            this.Load += new System.EventHandler(this.SaleControl_Load);
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
             this.tableLayoutPanel7.ResumeLayout(false);
@@ -303,14 +338,14 @@ namespace DesktopAplikacija.UserControls
 
         private System.Windows.Forms.Button btnDodaj;
         private System.Windows.Forms.Button btnObrisi;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtNaziv;
+        private System.Windows.Forms.TextBox txtKapacitet;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnIzmeni;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBoxKriterijum;
         private System.Windows.Forms.TextBox txtPretraga;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
         private System.Windows.Forms.DataGridView dataGridViewSale;
@@ -319,5 +354,8 @@ namespace DesktopAplikacija.UserControls
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdSale;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Naziv_sale;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Kapacitet_sale;
     }
 }

@@ -23,6 +23,8 @@ namespace DesktopAplikacija.UserControls
             salaBusiness = new SalaBusiness();
             seIgraUSaliBusiness = new IgraSeUSaliBusiness();
             kartaBusiness = new KartaBusiness();
+            btnIzmeni.Enabled = false;
+            btnObrisi.Enabled = false;
         }
 
         private List<string> ListEmail()
@@ -108,12 +110,11 @@ namespace DesktopAplikacija.UserControls
             comboBoxNazivFilma.DataSource = ListNazivFilma();
             comboBoxNazivSale.DataSource = ListNazivSale();
             comboBoxDatumOdrzavanja.DataSource = ListDatumOdrzavanja();
+            OsveziTabelu();
         }
 
         private void btnDodaj_Click(object sender, EventArgs e)
         {
-
-
             try
             {
                 Karta karta = new Karta();
@@ -126,6 +127,8 @@ namespace DesktopAplikacija.UserControls
                 if (kartaBusiness.Dodaj(karta) == true)
                 {
                     MessageBox.Show("Uspešno ste prodali kartu ");
+                    OsveziTabelu();
+                    SetInput();
                 }
                 else
                 {
@@ -139,8 +142,113 @@ namespace DesktopAplikacija.UserControls
 
 
         }
+        private void SetInput()
+        {
+            txtBrojSedista.Text = string.Empty;
+            txtCena.Text = string.Empty;
+        }
+        private void btnIzmeni_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Karta karta = new Karta();
+                int row = dataGridViewKarte.SelectedRows[0].Index;
+                int IdKarte = Convert.ToInt32(dataGridViewKarte[0, row].Value.ToString());
+                karta.IdKarte = IdKarte;
+                karta.BrojSedista = Convert.ToInt32(txtBrojSedista.Text);
+                karta.Cena = decimal.Parse(txtCena.Text);
+                karta.IdFilma = GetIdFilma(comboBoxNazivFilma.SelectedItem.ToString());
+                karta.IdSale = GetIdSale(comboBoxNazivSale.SelectedItem.ToString());
+                karta.IdGledaoca = GetIdGledaoca(comboBoxEmailGledaoca.SelectedItem.ToString());
+                karta.DatumOdrzavanja = comboBoxDatumOdrzavanja.SelectedItem.ToString();
+                if (kartaBusiness.Izmeni(karta))
+                {
+                    MessageBox.Show("Uspesno ste izvrsili promenu ");
+                    OsveziTabelu();
+                    SetInput();
+                }
+                else
+                {
+                    MessageBox.Show("Greska!!!");
+                }
 
 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
 
+        private void btnObrisi_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int row = dataGridViewKarte.SelectedRows[0].Index;
+                int IdKarte = Convert.ToInt32(dataGridViewKarte[0, row].Value.ToString());
+                Karta karta = new Karta();
+                karta.IdKarte = IdKarte;
+                if (kartaBusiness.Obrisi(karta))
+                {
+                    MessageBox.Show("Uspesno ste ponistili kartu ");
+                }
+                else
+                {
+                    MessageBox.Show("Podatak koji zelite da obrisate je povezan u drugim tabelama");
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void OsveziTabelu()
+        {
+            dataGridViewKarte.AutoGenerateColumns = false;
+            dataGridViewKarte.Rows.Clear();
+
+            foreach (var item1 in kartaBusiness.SveKarte())
+            {
+                foreach (var item2 in item1.ListFilmova)
+                {
+                    foreach (var item3 in item1.ListGledaoci)
+                    {
+                        foreach (var item4 in item1.ListSala)
+                        {
+                            if (item1.IdFilma == item2.IdFilma && item1.IdGledaoca == item3.IdGledaoca && item1.IdSale == item4.IdSale)
+                            {
+                                dataGridViewKarte.Rows.Add(
+                                    item1.IdKarte, item1.BrojSedista, item2.Naziv, item4.NazivSale,
+                                    item3.Ime, item3.Prezime, item3.Email, item1.Cena, item1.DatumOdrzavanja, item2.Trajanje
+
+                                    );
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+
+        private void dataGridViewKarte_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                int row = dataGridViewKarte.SelectedRows[0].Index;
+                txtBrojSedista.Text = dataGridViewKarte[1, row].Value.ToString();
+                comboBoxNazivFilma.SelectedItem = dataGridViewKarte[2, row].Value.ToString();
+                comboBoxNazivSale.SelectedItem = dataGridViewKarte[3, row].Value.ToString();
+                comboBoxEmailGledaoca.SelectedItem = dataGridViewKarte[6, row].Value.ToString();
+                txtCena.Text = dataGridViewKarte[7, row].Value.ToString();
+                comboBoxDatumOdrzavanja.SelectedItem = dataGridViewKarte[8, row].Value.ToString();
+                btnObrisi.Enabled = true;
+                btnIzmeni.Enabled = true;
+            }
+            catch
+            {
+                MessageBox.Show("Morate selektovati red u tabeli ");
+            }
+        }
     }
 }

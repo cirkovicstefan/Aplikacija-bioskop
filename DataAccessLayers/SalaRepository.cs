@@ -17,7 +17,7 @@ namespace DataAccessLayers
         public bool Izmeni(Sala sala)
         {
             string query = string.Format($"UPDATE sala SET naziv_sale='{sala.NazivSale}', " +
-                $"kapacitet='{sala.Kapacitet}'");
+                $"kapacitet='{sala.Kapacitet}' WHERE id_sale='{sala.IdSale}'");
             return BaseConnection.ExecuteNonQuerySqlCommand(query);
         }
 
@@ -27,10 +27,10 @@ namespace DataAccessLayers
             return BaseConnection.ExecuteNonQuerySqlCommand(query);
         }
 
-        public List<Sala> SveSale()
+        private List<Sala>SveSaleInternal(string query)
         {
             List<Sala> retunSale = new List<Sala>();
-            using(SqlCommand sqlCommand = BaseConnection.GetSqlCommand("SELECT * FROM sala"))
+            using (SqlCommand sqlCommand = BaseConnection.GetSqlCommand(query))
             {
                 SqlDataReader reader = sqlCommand.ExecuteReader();
                 if (reader.HasRows)
@@ -46,6 +46,26 @@ namespace DataAccessLayers
                 }
             }
             return retunSale;
+        }
+
+        public List<Sala> SveSale()
+        => SveSaleInternal("SELECT * FROM sala");
+
+        public List<Sala>Pretraga(string by,Sala sala)
+        {
+            string query = string.Empty;
+            switch (by)
+            {
+                case "Naziv":
+                    query = $"SELECT * FROM sala WHRE naziv_sale LIKE '%{sala.NazivSale}%'";
+                    return SveSaleInternal(query);
+                case "Kapacitet":
+                    query = $"SELECT * FROM sala WHRE kapacitet LIKE '%{sala.Kapacitet}%'";
+                    return SveSaleInternal(query);
+                default:
+                    return new List<Sala>();
+
+            }
         }
     }
 }

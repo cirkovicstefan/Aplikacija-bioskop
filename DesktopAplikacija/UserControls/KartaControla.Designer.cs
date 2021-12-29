@@ -29,7 +29,6 @@ namespace DesktopAplikacija.UserControls
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.btnDodaj = new System.Windows.Forms.Button();
             this.btnObrisi = new System.Windows.Forms.Button();
             this.txtBrojSedista = new System.Windows.Forms.TextBox();
@@ -51,12 +50,23 @@ namespace DesktopAplikacija.UserControls
             this.txtPretraga = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridViewKarte = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NazivFilma = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NazivSale = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Prezime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cena = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DatumOdrzavanja = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Trajanje = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.error = new System.Windows.Forms.ErrorProvider(this.components);
+            this.IdKarte = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BrojSedista = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewKarte)).BeginInit();
@@ -65,7 +75,6 @@ namespace DesktopAplikacija.UserControls
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.error)).BeginInit();
             this.SuspendLayout();
             // 
             // btnDodaj
@@ -88,6 +97,7 @@ namespace DesktopAplikacija.UserControls
             this.btnObrisi.TabIndex = 3;
             this.btnObrisi.Text = "Obrisi";
             this.btnObrisi.UseVisualStyleBackColor = true;
+            this.btnObrisi.Click += new System.EventHandler(this.btnObrisi_Click);
             // 
             // txtBrojSedista
             // 
@@ -136,6 +146,7 @@ namespace DesktopAplikacija.UserControls
             this.btnIzmeni.TabIndex = 2;
             this.btnIzmeni.Text = "Izmeni";
             this.btnIzmeni.UseVisualStyleBackColor = true;
+            this.btnIzmeni.Click += new System.EventHandler(this.btnIzmeni_Click);
             // 
             // tableLayoutPanel4
             // 
@@ -290,19 +301,115 @@ namespace DesktopAplikacija.UserControls
             // 
             // dataGridViewKarte
             // 
+            this.dataGridViewKarte.AllowUserToAddRows = false;
+            this.dataGridViewKarte.AllowUserToDeleteRows = false;
             this.dataGridViewKarte.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewKarte.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.NazivFilma,
+            this.NazivSale,
+            this.Ime,
+            this.Prezime,
+            this.Email,
+            this.Cena,
+            this.DatumOdrzavanja,
+            this.Trajanje});
             this.dataGridViewKarte.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewKarte.Location = new System.Drawing.Point(3, 3);
             this.dataGridViewKarte.Name = "dataGridViewKarte";
+            this.dataGridViewKarte.ReadOnly = true;
             this.dataGridViewKarte.RowHeadersWidth = 51;
-            this.dataGridViewKarte.Size = new System.Drawing.Size(658, 573);
+            this.dataGridViewKarte.Size = new System.Drawing.Size(825, 573);
             this.dataGridViewKarte.TabIndex = 0;
+            this.dataGridViewKarte.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewKarte_CellClick);
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "IdKarte";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Visible = false;
+            this.dataGridViewTextBoxColumn1.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "Broj sedista";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 125;
+            // 
+            // NazivFilma
+            // 
+            this.NazivFilma.HeaderText = "Naziv filma";
+            this.NazivFilma.MinimumWidth = 6;
+            this.NazivFilma.Name = "NazivFilma";
+            this.NazivFilma.ReadOnly = true;
+            this.NazivFilma.Width = 200;
+            // 
+            // NazivSale
+            // 
+            this.NazivSale.HeaderText = "Naziv sale";
+            this.NazivSale.MinimumWidth = 6;
+            this.NazivSale.Name = "NazivSale";
+            this.NazivSale.ReadOnly = true;
+            this.NazivSale.Width = 125;
+            // 
+            // Ime
+            // 
+            this.Ime.HeaderText = "Ime ";
+            this.Ime.MinimumWidth = 6;
+            this.Ime.Name = "Ime";
+            this.Ime.ReadOnly = true;
+            this.Ime.Width = 125;
+            // 
+            // Prezime
+            // 
+            this.Prezime.HeaderText = "Prezime";
+            this.Prezime.MinimumWidth = 6;
+            this.Prezime.Name = "Prezime";
+            this.Prezime.ReadOnly = true;
+            this.Prezime.Width = 125;
+            // 
+            // Email
+            // 
+            this.Email.HeaderText = "Email";
+            this.Email.MinimumWidth = 6;
+            this.Email.Name = "Email";
+            this.Email.ReadOnly = true;
+            this.Email.Width = 220;
+            // 
+            // Cena
+            // 
+            this.Cena.HeaderText = "Cena";
+            this.Cena.MinimumWidth = 6;
+            this.Cena.Name = "Cena";
+            this.Cena.ReadOnly = true;
+            this.Cena.Width = 125;
+            // 
+            // DatumOdrzavanja
+            // 
+            this.DatumOdrzavanja.HeaderText = "Datum odrzavanja";
+            this.DatumOdrzavanja.MinimumWidth = 6;
+            this.DatumOdrzavanja.Name = "DatumOdrzavanja";
+            this.DatumOdrzavanja.ReadOnly = true;
+            this.DatumOdrzavanja.Width = 125;
+            // 
+            // Trajanje
+            // 
+            this.Trajanje.HeaderText = "Trajanje";
+            this.Trajanje.MinimumWidth = 6;
+            this.Trajanje.Name = "Trajanje";
+            this.Trajanje.ReadOnly = true;
+            this.Trajanje.Width = 125;
             // 
             // tableLayoutPanel6
             // 
-            this.tableLayoutPanel6.ColumnCount = 2;
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel6.ColumnCount = 1;
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel6.Controls.Add(this.dataGridViewKarte, 0, 0);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 46);
@@ -377,9 +484,19 @@ namespace DesktopAplikacija.UserControls
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1065, 634);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
-            // error
+            // IdKarte
             // 
-            this.error.ContainerControl = this;
+            this.IdKarte.HeaderText = "IdKarte";
+            this.IdKarte.MinimumWidth = 6;
+            this.IdKarte.Name = "IdKarte";
+            this.IdKarte.Width = 125;
+            // 
+            // BrojSedista
+            // 
+            this.BrojSedista.HeaderText = "BrojSedista";
+            this.BrojSedista.MinimumWidth = 6;
+            this.BrojSedista.Name = "BrojSedista";
+            this.BrojSedista.Width = 125;
             // 
             // KartaControla
             // 
@@ -399,7 +516,6 @@ namespace DesktopAplikacija.UserControls
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.error)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -432,6 +548,17 @@ namespace DesktopAplikacija.UserControls
         private System.Windows.Forms.ComboBox comboBoxNazivSale;
         private System.Windows.Forms.ComboBox comboBoxNazivFilma;
         private System.Windows.Forms.TextBox txtCena;
-        private System.Windows.Forms.ErrorProvider error;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdKarte;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BrojSedista;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NazivFilma;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NazivSale;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Prezime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cena;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DatumOdrzavanja;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Trajanje;
     }
 }

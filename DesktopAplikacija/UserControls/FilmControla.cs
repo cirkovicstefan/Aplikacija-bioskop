@@ -13,6 +13,8 @@ namespace DesktopAplikacija.UserControls
         {
             InitializeComponent();
             filmBusiness = new FilmBusiness();
+            btnIzmeni.Enabled = false;
+            btnObrisi.Enabled = false;
         }
 
         private void btnDodaj_Click(object sender, EventArgs e)
@@ -111,6 +113,8 @@ namespace DesktopAplikacija.UserControls
                 txtNaziv.Text = dataGridViewFilm[1, row].Value.ToString();
                 txtTrajanje.Text = dataGridViewFilm[2, row].Value.ToString();
                 txtZanr.Text = dataGridViewFilm[3, row].Value.ToString();
+                btnIzmeni.Enabled = !false;
+                btnObrisi.Enabled = !false;
             }
             catch
             {

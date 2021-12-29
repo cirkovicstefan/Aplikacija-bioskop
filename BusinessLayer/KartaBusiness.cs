@@ -64,12 +64,7 @@ namespace BusinessLayer
         public bool Obrisi(Karta karta)
         {
             bool result = true;
-            foreach (var item in kartaRepository.SveKarte())
-            {
-                if (item.IdKarte != karta.IdKarte)
-                    throw new Exception("Karta koju zelite da ponistite ne postoji !!!");
-                else break;
-            }
+            
             int brojProdatihKarata = 0;
             foreach (var item in seIgraUSaliRepository.SviSeIgraUSali())
             {

@@ -2,6 +2,7 @@
 using Common.Interface.Repository;
 using Common.Model;
 using DataAccessLayers;
+using System;
 using System.Collections.Generic;
 
 namespace BusinessLayer
@@ -18,6 +19,11 @@ namespace BusinessLayer
 
         public bool Dodaj(Sala sala)
         {
+            foreach(var item in salaRepository.SveSale())
+            {
+                if (sala.Kapacitet == sala.Kapacitet && sala.NazivSale.Equals(item.NazivSale))
+                    throw new Exception("Salu koju zelite da unesete vec postoji");
+            }
             return salaRepository.Dodaj(sala);
         }
 
@@ -30,6 +36,9 @@ namespace BusinessLayer
         {
             return salaRepository.Obrisi(idSale);
         }
+
+        public List<Sala> Pretraga(string by, Sala sala)
+        => salaRepository.Pretraga(by, sala);
 
         public List<Sala> SveSale()
         {
