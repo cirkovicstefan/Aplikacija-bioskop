@@ -1,11 +1,7 @@
 ﻿using Common.Interface.Repository;
 using Common.Model;
-using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DataAccessLayers
 {
@@ -24,10 +20,18 @@ namespace DataAccessLayers
             return BaseConnection.ExecuteNonQuerySqlCommand(query);
         }
 
+        public bool LoginUser(Login login, out string ime)
+        {
+
+            string query = $"SELECT korisnicko_ime FROM Logovanje WHERE korisnicko_ime='{login.KorisnickoIme}' AND lozinka='{login.Lozinka}'";
+            ime = (string)BaseConnection.ExecuteScalarSqlCommand(query);
+            return ime == login.KorisnickoIme ? true : false;
+        }
+
         public List<Login> SviRadnici()
         {
             List<Login> returnUser = new List<Login>();
-            using(SqlCommand sqlCommand=BaseConnection.GetSqlCommand("SELECT * FROM Logovanje"))
+            using (SqlCommand sqlCommand = BaseConnection.GetSqlCommand("SELECT * FROM Logovanje"))
             {
                 SqlDataReader reader = sqlCommand.ExecuteReader();
                 if (reader.HasRows)

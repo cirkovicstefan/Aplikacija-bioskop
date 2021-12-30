@@ -13,10 +13,11 @@ namespace DesktopAplikacija
 {
     public partial class Bioskop : Form
     {
-        public Bioskop()
+        public Bioskop(string korisnicko_ime_radnika)
         {
             InitializeComponent();
             this.WindowState = FormWindowState.Maximized;
+            statusStrip1.Items.Add(korisnicko_ime_radnika.ToUpper());
         }
 
         private void btnFilm_Click(object sender, EventArgs e)

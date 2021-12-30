@@ -26,7 +26,9 @@ namespace DataAccessLayers
 
         public bool Obrisi(Karta karta)
         {
-            string query = $"DELETE FROM karta WHERE id_karte={karta.IdKarte}";
+            string query = $"DELETE FROM karta WHERE id_karte='{karta.IdKarte}' AND  " +
+                $"id_filma='{karta.IdFilma}' AND id_sale='{karta.IdSale}' AND  " +
+                $"id_gledaoca='{karta.IdGledaoca}'";
             return BaseConnection.ExecuteNonQuerySqlCommand(query);
         }
 
@@ -76,6 +78,24 @@ namespace DataAccessLayers
                 }
             }
             return listaKarti;
+        }
+
+
+        public List<string> ZaradaFilmova()
+        {
+            List<string> listZarada = new List<string>();
+            string query = $"SELECT  'Film '+f.naziv_filma+' je zaradio od prodaje karata '+CONVERT(VARCHAR,SUM(k.cena))+' dinara' FROM " +
+                $" film f INNER JOIN karta k ON f.id_filma=k.id_filma GROUP BY f.naziv_filma ORDER BY (SUM(k.cena)) DESC;";
+            using (SqlCommand sqlCommand = BaseConnection.GetSqlCommand(query))
+            {
+                SqlDataReader reader = sqlCommand.ExecuteReader();
+                while (reader.Read())
+                {
+                    listZarada.Add(reader.GetString(0));
+                }
+                
+            }
+            return listZarada;
         }
     }
 }

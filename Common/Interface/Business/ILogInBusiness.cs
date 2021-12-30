@@ -12,5 +12,6 @@ namespace Common.Interface.Repository
         bool Dodaj(Login login);
         bool Obrisi(Login login);
         List<Login> SviRadnici();
+        bool LoginUser(Login login, out string ime);
     }
 }
