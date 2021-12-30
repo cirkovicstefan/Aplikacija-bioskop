@@ -13,5 +13,6 @@ namespace Common.Interface.Repository
         bool Izmeni(Karta karta);
         bool Obrisi(Karta karta);
         List<Karta> SveKarte();
+        List<string> ZaradaFilmova();
     }
 }

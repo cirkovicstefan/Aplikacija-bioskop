@@ -239,7 +239,7 @@
   <data name="btnRadnik.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAB
-        YAAAAWABINkT2gAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAjsSURBVHhe3dsF
+        XgAAAV4BX2xuegAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAjsSURBVHhe3dsF
         zCxXGcbxi2spECxIgeLuEtyDBSdYcAkOwS1AgoQADRKgBYJDi7S4W3AIEjRYcHd3f35z901PprO7s7uz
         H9v7JP/c75yZOTtz9H3fc+6+iXTC8KLwp/Dfhr+EV4aThANatww++Pfh2w2/DfLvEg5oPTL40Pt0qWN1
         hyD/KV3qeKwThYP3/zmoRwUfeu8udaxuH5ZVgHJPvP/P3dTVw0+DDzk6nDKUjH3XPxJcv11odeMg/9Ph
@@ -285,6 +285,6 @@
     <value>17, 17</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>25</value>
+    <value>94</value>
   </metadata>
 </root>

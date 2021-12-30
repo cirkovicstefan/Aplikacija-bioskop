@@ -25,6 +25,7 @@ namespace DesktopAplikacija.UserControls
             kartaBusiness = new KartaBusiness();
             btnIzmeni.Enabled = false;
             btnObrisi.Enabled = false;
+            dataGridViewKarte.Rows.Clear();
         }
 
         private List<string> ListEmail()
@@ -188,16 +189,20 @@ namespace DesktopAplikacija.UserControls
                 int IdKarte = Convert.ToInt32(dataGridViewKarte[0, row].Value.ToString());
                 Karta karta = new Karta();
                 karta.IdKarte = IdKarte;
+                karta.IdFilma = GetIdFilma(comboBoxNazivFilma.SelectedItem.ToString());
+                karta.IdSale = GetIdSale(comboBoxNazivSale.SelectedItem.ToString());
+                karta.IdGledaoca = GetIdGledaoca(comboBoxEmailGledaoca.SelectedItem.ToString());
                 if (kartaBusiness.Obrisi(karta))
                 {
                     MessageBox.Show("Uspesno ste ponistili kartu ");
+                    OsveziTabelu();
                 }
                 else
                 {
                     MessageBox.Show("Podatak koji zelite da obrisate je povezan u drugim tabelama");
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -210,10 +215,13 @@ namespace DesktopAplikacija.UserControls
 
             foreach (var item1 in kartaBusiness.SveKarte())
             {
+
                 foreach (var item2 in item1.ListFilmova)
                 {
+
                     foreach (var item3 in item1.ListGledaoci)
                     {
+
                         foreach (var item4 in item1.ListSala)
                         {
                             if (item1.IdFilma == item2.IdFilma && item1.IdGledaoca == item3.IdGledaoca && item1.IdSale == item4.IdSale)
@@ -223,6 +231,7 @@ namespace DesktopAplikacija.UserControls
                                     item3.Ime, item3.Prezime, item3.Email, item1.Cena, item1.DatumOdrzavanja, item2.Trajanje
 
                                     );
+
                             }
                         }
                     }

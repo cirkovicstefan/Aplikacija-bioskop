@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System;
 using BusinessLayer;
 using Common.Interface.Business;
+using Common.Interface.Repository;
+using DataAccessLayers;
 
 namespace ConsoleBioskop
 {
@@ -10,9 +12,11 @@ namespace ConsoleBioskop
     {
         static void Main(string[] args)
         {
-            string str = "1 stefan";
-            str = str.Substring(2);
-            Console.WriteLine(str);
+            IKartaRepository kartaRepository = new KartaRepository();
+            foreach(var item in kartaRepository.ZaradaFilmova())
+            {
+                Console.WriteLine(item);
+            }
             
         }
     }

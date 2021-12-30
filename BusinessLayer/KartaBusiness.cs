@@ -40,10 +40,16 @@ namespace BusinessLayer
                 if (item.IdGledaoca == karta.IdGledaoca && item.IdFilma == karta.IdFilma && item.DatumOdrzavanja.Equals(karta.DatumOdrzavanja))
                     throw new Exception("Već ste kupili kartu za odabrani film !!!");
             }
+            foreach (var item in kartaRepository.SveKarte())
+            {
+                if (item.BrojSedista == karta.BrojSedista)
+                    throw new Exception("Karta sa tim brojem sedista je vec prodata");
+            }
             if (kapaciteSale == brojProdatihKarata)
             {
                 throw new Exception("Ne mozete da kupite kartu sala je popunjena!!!");
             }
+          
             else if (kapaciteSale != brojProdatihKarata)
             {
                 result = kartaRepository.Dodaj(karta);
@@ -82,6 +88,11 @@ namespace BusinessLayer
         public List<Karta> SveKarte()
         {
             return kartaRepository.SveKarte();
+        }
+
+        public List<string> ZaradaFilmova()
+        {
+            return kartaRepository.ZaradaFilmova();
         }
 
         public decimal ZaradaOdFilma(string film)

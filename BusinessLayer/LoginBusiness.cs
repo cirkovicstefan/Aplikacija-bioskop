@@ -21,6 +21,12 @@ namespace BusinessLayer
             return logInRepository.Dodaj(login);
         }
 
+        public bool LoginUser(Login login,out string ime)
+        {
+            
+            return logInRepository.LoginUser(login,out ime);
+        }
+
         public bool Obrisi(Login login)
         {
             return logInRepository.Obrisi(login);

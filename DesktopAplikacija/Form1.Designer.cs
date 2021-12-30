@@ -191,29 +191,29 @@ namespace DesktopAplikacija
             // statusStrip1
             // 
             this.statusStrip1.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.statusStrip1.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.statusStrip1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1,
             this.toolStripStatusLabelIme});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 618);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 615);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(943, 34);
+            this.statusStrip1.Size = new System.Drawing.Size(943, 37);
             this.statusStrip1.TabIndex = 0;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // toolStripStatusLabel1
             // 
-            this.toolStripStatusLabel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.toolStripStatusLabel1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(94, 28);
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(108, 31);
             this.toolStripStatusLabel1.Text = "RADNIK:";
             // 
             // toolStripStatusLabelIme
             // 
             this.toolStripStatusLabelIme.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.toolStripStatusLabelIme.Name = "toolStripStatusLabelIme";
-            this.toolStripStatusLabelIme.Size = new System.Drawing.Size(0, 28);
+            this.toolStripStatusLabelIme.Size = new System.Drawing.Size(0, 31);
             // 
             // panelPrikaz
             // 
