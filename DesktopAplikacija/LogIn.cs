@@ -36,22 +36,22 @@ namespace DesktopAplikacija
                 {
                     MessageBox.Show("Uspesno ste se prijavili na sistem");
                     SetInput();
+                    
                     string korisnicko_ime = ime_BE;
                     Bioskop bioskop = new Bioskop(korisnicko_ime);
                     bioskop.ShowDialog();
+                    
                 }
                 else
                 {
                     MessageBox.Show("Korisnicko ime i lozinka nisu tacni pokusajte ponovo");
+                    SetInput();
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-
-
-
         }
     }
 }

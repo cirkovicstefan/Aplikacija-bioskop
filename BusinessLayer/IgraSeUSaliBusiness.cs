@@ -12,11 +12,17 @@ namespace BusinessLayer
 
         public IgraSeUSaliBusiness()
         {
+           
             seIgraUSaliRepository = new IgraSeUSaliRepository();
         }
 
         public bool Dodaj(SeIgraUSali seIgraUSali)
         {
+            foreach (var item in seIgraUSaliRepository.SviSeIgraUSali())
+            {
+                if (item.IdSale == seIgraUSali.IdSale && item.DatumOdrzavanja == seIgraUSali.DatumOdrzavanja && item.VremeOdrzavanja == seIgraUSali.VremeOdrzavanja)
+                    throw new Exception("U toj sali se vec u to vreme prikazuje drugi film");
+            }
             return seIgraUSaliRepository.Dodaj(seIgraUSali);
         }
 

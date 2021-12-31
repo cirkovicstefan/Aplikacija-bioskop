@@ -17,7 +17,7 @@ namespace DesktopAplikacija
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Bioskop("k"));
+            Application.Run(new LogIn());
         }
     }
 }
