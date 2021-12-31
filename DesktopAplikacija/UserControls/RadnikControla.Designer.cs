@@ -114,8 +114,9 @@ namespace DesktopAplikacija.UserControls
             // listBoxRadnik
             // 
             this.listBoxRadnik.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listBoxRadnik.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.listBoxRadnik.FormattingEnabled = true;
-            this.listBoxRadnik.ItemHeight = 20;
+            this.listBoxRadnik.ItemHeight = 28;
             this.listBoxRadnik.Location = new System.Drawing.Point(3, 3);
             this.listBoxRadnik.Name = "listBoxRadnik";
             this.listBoxRadnik.Size = new System.Drawing.Size(234, 240);
