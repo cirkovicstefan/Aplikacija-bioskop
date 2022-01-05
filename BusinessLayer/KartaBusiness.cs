@@ -4,6 +4,8 @@ using Common.Model;
 using DataAccessLayers;
 using System;
 using System.Collections.Generic;
+using System.Linq;
+
 namespace BusinessLayer
 {
     public class KartaBusiness : IKartaBusiness
@@ -24,11 +26,14 @@ namespace BusinessLayer
             bool result = true;
             int kapaciteSale = 0;
 
-            foreach (var item in salaRepository.SveSale())
+            foreach (Sala item in salaRepository.SveSale())
             {
                 if (item.IdSale == karta.IdSale)
                     kapaciteSale += item.Kapacitet;
             }
+
+            var iz = from n in salaRepository.SveSale() where n.IdSale == karta.IdSale select n.Kapacitet;
+
             int brojProdatihKarata = 0;
             foreach (var item in seIgraUSaliRepository.SviSeIgraUSali())
             {

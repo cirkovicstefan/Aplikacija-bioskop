@@ -1,0 +1,53 @@
+CREATE TABLE [dbo].[film] (
+    [id_filma]    INT          IDENTITY (1, 1) NOT NULL,
+    [naziv_filma] VARCHAR (50) NOT NULL,
+    [trajanje]    VARCHAR (20) NULL,
+    [zanr]        VARCHAR (20) NULL,
+    CONSTRAINT [film_pk] PRIMARY KEY CLUSTERED ([id_filma] ASC)
+);
+CREATE TABLE [dbo].[gledalac] (
+    [id_gledaoca] INT          IDENTITY (1, 1) NOT NULL,
+    [email]       VARCHAR (50) NOT NULL,
+    [ime]         VARCHAR (50) NULL,
+    [prezime]     VARCHAR (50) NULL,
+    CONSTRAINT [gledalac_pk] PRIMARY KEY CLUSTERED ([id_gledaoca] ASC)
+);
+
+CREATE TABLE [dbo].[karta] (
+    [id_karte]         INT          IDENTITY (1, 1) NOT NULL,
+    [broj_sedista]     INT          NOT NULL,
+    [id_filma]         INT          NOT NULL,
+    [id_sale]          INT          NOT NULL,
+    [id_gledaoca]      INT          NOT NULL,
+    [cena]             DECIMAL (18) NOT NULL,
+    [datum_odrzavanja] VARCHAR (20) NOT NULL,
+    CONSTRAINT [karta_pk] PRIMARY KEY CLUSTERED ([id_karte] ASC),
+    CONSTRAINT [karta_gledalac_fk] FOREIGN KEY ([id_gledaoca]) REFERENCES [dbo].[gledalac] ([id_gledaoca]),
+    CONSTRAINT [karta_seigrausali_fk] FOREIGN KEY ([id_filma], [id_sale], [datum_odrzavanja]) REFERENCES [dbo].[seigrausali] ([id_filma], [id_sale], [datum_odrzavanja])
+);
+
+CREATE TABLE [dbo].[Logovanje] (
+    [Id]             INT          IDENTITY (1, 1) NOT NULL,
+    [korisnicko_ime] VARCHAR (50) NOT NULL,
+    [lozinka]        VARCHAR (50) NOT NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+CREATE TABLE [dbo].[sala] (
+    [id_sale]    INT          IDENTITY (1, 1) NOT NULL,
+    [naziv_sale] VARCHAR (50) NOT NULL,
+    [kapacitet]  INT          NOT NULL,
+    CONSTRAINT [sala_pk] PRIMARY KEY CLUSTERED ([id_sale] ASC)
+);
+
+CREATE TABLE [dbo].[seigrausali] (
+    [id_filma]             INT          NOT NULL,
+    [id_sale]              INT          NOT NULL,
+    [datum_odrzavanja]     VARCHAR (20) NOT NULL,
+    [vreme_odrzavanja]     VARCHAR (20) NOT NULL,
+    [broj_prodatih_karata] INT          NOT NULL,
+    CONSTRAINT [seigrausali_pk] PRIMARY KEY CLUSTERED ([id_filma] ASC, [id_sale] ASC, [datum_odrzavanja] ASC),
+    CONSTRAINT [seigrausali_film_fk] FOREIGN KEY ([id_filma]) REFERENCES [dbo].[film] ([id_filma]),
+    CONSTRAINT [seigrausali_sala_fk] FOREIGN KEY ([id_sale]) REFERENCES [dbo].[sala] ([id_sale])
+);
+
