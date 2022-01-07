@@ -36,8 +36,6 @@ namespace DesktopAplikacija.UserControls
             this.VremeOdrzavanja = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BrojProdatih = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Kapacitet = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label4 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.btnDodaj = new System.Windows.Forms.Button();
@@ -45,7 +43,6 @@ namespace DesktopAplikacija.UserControls
             this.btnObrisi = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
-            this.txtPretraga = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.txtBrojProdatih = new System.Windows.Forms.TextBox();
@@ -57,15 +54,14 @@ namespace DesktopAplikacija.UserControls
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtVreme = new System.Windows.Forms.TextBox();
+            this.txtDatumOdrzavanja = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.BrojSedista = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IdKarte = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtDatumOdrzavanja = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewKarte)).BeginInit();
             this.tableLayoutPanel6.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            this.tableLayoutPanel7.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -139,25 +135,6 @@ namespace DesktopAplikacija.UserControls
             this.Kapacitet.MinimumWidth = 6;
             this.Kapacitet.Name = "Kapacitet";
             this.Kapacitet.ReadOnly = true;
-            // 
-            // label4
-            // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(3, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(113, 35);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Kriterijum pretrage:";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(122, 3);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(113, 28);
-            this.comboBox1.TabIndex = 1;
             // 
             // tableLayoutPanel6
             // 
@@ -248,9 +225,6 @@ namespace DesktopAplikacija.UserControls
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel7.Controls.Add(this.label4, 0, 0);
-            this.tableLayoutPanel7.Controls.Add(this.comboBox1, 1, 0);
-            this.tableLayoutPanel7.Controls.Add(this.txtPretraga, 2, 0);
             this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel7.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
@@ -258,14 +232,6 @@ namespace DesktopAplikacija.UserControls
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel7.Size = new System.Drawing.Size(798, 35);
             this.tableLayoutPanel7.TabIndex = 1;
-            // 
-            // txtPretraga
-            // 
-            this.txtPretraga.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPretraga.Location = new System.Drawing.Point(241, 4);
-            this.txtPretraga.Name = "txtPretraga";
-            this.txtPretraga.Size = new System.Drawing.Size(233, 27);
-            this.txtPretraga.TabIndex = 2;
             // 
             // tableLayoutPanel3
             // 
@@ -396,6 +362,14 @@ namespace DesktopAplikacija.UserControls
             this.txtVreme.Size = new System.Drawing.Size(86, 27);
             this.txtVreme.TabIndex = 15;
             // 
+            // txtDatumOdrzavanja
+            // 
+            this.txtDatumOdrzavanja.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtDatumOdrzavanja.Location = new System.Drawing.Point(112, 139);
+            this.txtDatumOdrzavanja.Name = "txtDatumOdrzavanja";
+            this.txtDatumOdrzavanja.Size = new System.Drawing.Size(86, 27);
+            this.txtDatumOdrzavanja.TabIndex = 16;
+            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
@@ -425,14 +399,6 @@ namespace DesktopAplikacija.UserControls
             this.IdKarte.Name = "IdKarte";
             this.IdKarte.Width = 125;
             // 
-            // txtDatumOdrzavanja
-            // 
-            this.txtDatumOdrzavanja.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtDatumOdrzavanja.Location = new System.Drawing.Point(112, 139);
-            this.txtDatumOdrzavanja.Name = "txtDatumOdrzavanja";
-            this.txtDatumOdrzavanja.Size = new System.Drawing.Size(86, 27);
-            this.txtDatumOdrzavanja.TabIndex = 16;
-            // 
             // PrikazivanjeFilma
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -445,8 +411,6 @@ namespace DesktopAplikacija.UserControls
             this.tableLayoutPanel6.ResumeLayout(false);
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel7.ResumeLayout(false);
-            this.tableLayoutPanel7.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
@@ -458,8 +422,6 @@ namespace DesktopAplikacija.UserControls
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridViewKarte;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.Button btnDodaj;
@@ -467,7 +429,6 @@ namespace DesktopAplikacija.UserControls
         private System.Windows.Forms.Button btnObrisi;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
-        private System.Windows.Forms.TextBox txtPretraga;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.Label label2;

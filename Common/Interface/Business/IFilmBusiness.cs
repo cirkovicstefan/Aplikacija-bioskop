@@ -13,5 +13,6 @@ namespace Common.Interface.Business
         bool Izmeni(Film film);
         bool Obrisi(int idFilma);
         List<Film> SviFilmovi();
+        List<Film> Pretraga(string by, Film film);
     }
 }

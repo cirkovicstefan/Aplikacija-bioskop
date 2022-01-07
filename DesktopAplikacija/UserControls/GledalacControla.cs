@@ -2,6 +2,7 @@
 using Common.Interface.Business;
 using Common.Model;
 using System;
+using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
@@ -10,12 +11,14 @@ namespace DesktopAplikacija.UserControls
     public partial class GledalacControla : UserControl
     {
         private IGledalacBusiness gledalacBusiness;
+        enum PretragaPo { IME,PREZIME };
         public GledalacControla()
         {
             InitializeComponent();
             gledalacBusiness = new GledalacBusiness();
             btnIzmeni.Enabled = false;
             btnObrisi.Enabled = false;
+            comboBoxKriterijum.DataSource = Enum.GetValues(typeof(PretragaPo));
         }
 
         private void btnDodaj_Click(object sender, EventArgs e)
@@ -152,6 +155,32 @@ namespace DesktopAplikacija.UserControls
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void txtPretraga_KeyDown(object sender, KeyEventArgs e)
+        {
+            Gledalac gledalac = new Gledalac();
+            List<Gledalac> list = new List<Gledalac>();
+            string by = comboBoxKriterijum.SelectedItem.ToString();
+            if (by == "IME")
+            {
+                gledalac.Ime = txtPretraga.Text;
+                list = gledalacBusiness.Pretraga(by, gledalac);
+            }
+            else if(by == "PREZIME")
+            {
+                gledalac.Prezime = txtPretraga.Text;
+                list = gledalacBusiness.Pretraga(by, gledalac);
+            }
+
+
+            dataGridViewGledaoci.Rows.Clear();
+            
+            foreach(var item in list)
+            {
+                dataGridViewGledaoci.Rows.Add(item.IdGledaoca, item.Ime, item.Prezime, item.Email);
+            }
+            dataGridViewGledaoci.Columns[0].Visible = false;
         }
     }
 }

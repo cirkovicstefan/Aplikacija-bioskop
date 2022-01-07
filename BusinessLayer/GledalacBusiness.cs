@@ -36,6 +36,11 @@ namespace BusinessLayer
             return gledalacRepository.Obrisi(idGledaoca);
         }
 
+        public List<Gledalac> Pretraga(string by, Gledalac gledalac)
+        {
+            return gledalacRepository.Pretraga(by, gledalac);
+        }
+
         public List<Gledalac> SviGledaoci()
         {
             return gledalacRepository.SviGledaoci();

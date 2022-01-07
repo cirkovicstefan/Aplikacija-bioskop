@@ -39,7 +39,7 @@ namespace DesktopAplikacija.UserControls
             this.Zanr = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.label4 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBoxKriterijum = new System.Windows.Forms.ComboBox();
             this.txtPretraga = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
@@ -167,7 +167,7 @@ namespace DesktopAplikacija.UserControls
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel7.Controls.Add(this.label4, 0, 0);
-            this.tableLayoutPanel7.Controls.Add(this.comboBox1, 1, 0);
+            this.tableLayoutPanel7.Controls.Add(this.comboBoxKriterijum, 1, 0);
             this.tableLayoutPanel7.Controls.Add(this.txtPretraga, 2, 0);
             this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel7.Location = new System.Drawing.Point(3, 3);
@@ -187,14 +187,14 @@ namespace DesktopAplikacija.UserControls
             this.label4.TabIndex = 0;
             this.label4.Text = "Kriterijum pretrage:";
             // 
-            // comboBox1
+            // comboBoxKriterijum
             // 
-            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(135, 5);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(126, 28);
-            this.comboBox1.TabIndex = 1;
+            this.comboBoxKriterijum.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBoxKriterijum.FormattingEnabled = true;
+            this.comboBoxKriterijum.Location = new System.Drawing.Point(135, 5);
+            this.comboBoxKriterijum.Name = "comboBoxKriterijum";
+            this.comboBoxKriterijum.Size = new System.Drawing.Size(126, 28);
+            this.comboBoxKriterijum.TabIndex = 1;
             // 
             // txtPretraga
             // 
@@ -203,6 +203,7 @@ namespace DesktopAplikacija.UserControls
             this.txtPretraga.Name = "txtPretraga";
             this.txtPretraga.Size = new System.Drawing.Size(258, 27);
             this.txtPretraga.TabIndex = 2;
+            this.txtPretraga.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPretraga_KeyDown);
             // 
             // tableLayoutPanel3
             // 
@@ -390,7 +391,7 @@ namespace DesktopAplikacija.UserControls
         private System.Windows.Forms.DataGridView dataGridViewFilm;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBoxKriterijum;
         private System.Windows.Forms.TextBox txtPretraga;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdFilma;
         private System.Windows.Forms.DataGridViewTextBoxColumn Naziv;

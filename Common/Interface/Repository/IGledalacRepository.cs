@@ -13,5 +13,6 @@ namespace Common.Interface.Repository
         bool Izmeni(Gledalac gledalac);
         bool Obrisi(int idGledaoca);
         List<Gledalac> SviGledaoci();
+        List<Gledalac> Pretraga(string by, Gledalac gledalac);
     }
 }

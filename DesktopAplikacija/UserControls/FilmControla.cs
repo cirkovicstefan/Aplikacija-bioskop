@@ -2,6 +2,7 @@
 using Common.Interface.Business;
 using Common.Model;
 using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace DesktopAplikacija.UserControls
@@ -9,12 +10,14 @@ namespace DesktopAplikacija.UserControls
     public partial class FilmControla : UserControl
     {
         private readonly IFilmBusiness filmBusiness;
+        enum PretragaPo { NAZIV };
         public FilmControla()
         {
             InitializeComponent();
             filmBusiness = new FilmBusiness();
             btnIzmeni.Enabled = false;
             btnObrisi.Enabled = false;
+            comboBoxKriterijum.DataSource = Enum.GetValues(typeof(PretragaPo));
         }
 
         private void btnDodaj_Click(object sender, EventArgs e)
@@ -145,6 +148,25 @@ namespace DesktopAplikacija.UserControls
             }
 
 
+        }
+
+        private void txtPretraga_KeyDown(object sender, KeyEventArgs e)
+        {
+            Film film = new Film();
+            List<Film> list = new List<Film>();
+            string by = comboBoxKriterijum.SelectedItem.ToString();
+            if (by == "NAZIV")
+            {
+             film.Naziv = txtPretraga.Text;
+                list = filmBusiness.Pretraga(by, film);
+            }
+
+
+            dataGridViewFilm.Rows.Clear();
+            foreach (var item in list)
+            {
+                dataGridViewFilm.Rows.Add(item.IdFilma, item.Naziv, item.Trajanje,item.Zanr);
+            }
         }
     }
 }

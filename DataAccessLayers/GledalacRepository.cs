@@ -54,6 +54,23 @@ namespace DataAccessLayers
         {
             return SviGledaociInternal("SELECT * FROM gledalac");
         }
+
+        public List<Gledalac> Pretraga(string by, Gledalac gledalac)
+        {
+            string query = string.Empty;
+            switch (by)
+            {
+                case "IME":
+                    query = $"SELECT * FROM gledalac WHERE ime LIKE '%{gledalac.Ime}%'";
+                    return SviGledaociInternal(query);
+                case "PREZIME":
+                    query = $"SELECT * FROM gledalac WHERE prezime LIKE '%{gledalac.Prezime}%'";
+                    return SviGledaociInternal(query);
+                default:
+                    return new List<Gledalac>();
+
+            }
+        }
     }
 
 

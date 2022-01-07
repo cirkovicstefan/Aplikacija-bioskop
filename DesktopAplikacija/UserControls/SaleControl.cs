@@ -10,7 +10,7 @@ namespace DesktopAplikacija.UserControls
     public partial class SaleControl : UserControl
     {
         private readonly ISalaBusiness salaBusiness;
-        enum PretragaPo { NAZIV, KAPACITET };
+        enum PretragaPo { NAZIV};
         public SaleControl()
         {
             InitializeComponent();
@@ -155,6 +155,7 @@ namespace DesktopAplikacija.UserControls
                 sala.NazivSale = txtPretraga.Text;
                 list = salaBusiness.Pretraga(by, sala);
             }
+          
            
             dataGridViewSale.Rows.Clear();
             foreach(var item in list)

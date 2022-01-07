@@ -25,12 +25,31 @@ namespace DataAccessLayers
 
         => BaseConnection.ExecuteNonQuerySqlCommand($"DELETE FROM film WHERE id_filma={idFilma}");
 
-       
+        public List<Film> Pretraga(string by, Film film)
+        {
+            string query = string.Empty;
+
+            if (by == "NAZIV")
+            {
+                query = $"SELECT * FROM film WHERE naziv_filma LIKE '%{film.Naziv}%'";
+                return SviFilmoviInternal(query);
+            }
+            else
+            {
+                return new List<Film>();
+            }
+         
+        }
 
         public List<Film> SviFilmovi()
         {
+            return SviFilmoviInternal("SELECT * FROM film");
+        }
+
+        public List<Film> SviFilmoviInternal(string query)
+        {
             List<Film> returnList = new List<Film>();
-            using (SqlCommand sqlCommand = BaseConnection.GetSqlCommand("SELECT * FROM film"))
+            using (SqlCommand sqlCommand = BaseConnection.GetSqlCommand(query))
             {
                 SqlDataReader reader = sqlCommand.ExecuteReader();
                 if (reader.HasRows)
