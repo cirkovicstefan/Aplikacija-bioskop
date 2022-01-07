@@ -13,6 +13,6 @@ namespace Common.Interface.Repository
         bool Izmeni(Film film);
         bool Obrisi(int idFilma);
         List<Film> SviFilmovi();
-       
+        List<Film> Pretraga(string by, Film film);
     }
 }

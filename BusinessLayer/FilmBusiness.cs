@@ -36,6 +36,11 @@ namespace BusinessLayer
             return filmRepository.Obrisi(idFilma);
         }
 
+        public List<Film> Pretraga(string by, Film film)
+        {
+            return filmRepository.Pretraga(by, film);
+        }
+
         public List<Film> SviFilmovi()
         => filmRepository.SviFilmovi();
 

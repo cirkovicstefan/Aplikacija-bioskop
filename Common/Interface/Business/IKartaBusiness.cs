@@ -15,5 +15,6 @@ namespace Common.Interface.Business
         List<Karta> SveKarte();
         decimal ZaradaOdFilma(string film);
         List<string> ZaradaFilmova();
+       
     }
 }

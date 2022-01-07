@@ -32,14 +32,20 @@ namespace DataAccessLayers
             return BaseConnection.ExecuteNonQuerySqlCommand(query);
         }
 
+        
         public List<Karta> SveKarte()
+        {
+            string query = $"SELECT k.*,g.*,s.*,f.* FROM karta k INNER JOIN gledalac g  ON " +
+               $"k.id_gledaoca=g.id_gledaoca INNER JOIN sala s ON s.id_sale=k.id_sale INNER JOIN seigrausali se " +
+               $"ON se.datum_odrzavanja=k.datum_odrzavanja INNER JOIN film f ON k.id_filma=f.id_filma";
+            return SveKarteInternal(query);
+        }
+
+        public List<Karta> SveKarteInternal(string query)
         {
             List<Karta> listaKarti = new List<Karta>();
 
-            string query = $"SELECT k.*,g.*,s.*,f.* FROM karta k INNER JOIN gledalac g  ON " +
-                $"k.id_gledaoca=g.id_gledaoca INNER JOIN sala s ON s.id_sale=k.id_sale INNER JOIN seigrausali se " +
-                $"ON se.datum_odrzavanja=k.datum_odrzavanja INNER JOIN film f ON k.id_filma=f.id_filma";
-
+          
             using (SqlCommand sqlCommnad = BaseConnection.GetSqlCommand(query))
             {
                 SqlDataReader reader = sqlCommnad.ExecuteReader();

@@ -56,11 +56,11 @@ namespace DataAccessLayers
             string query = string.Empty;
             switch (by)
             {
-                case "Naziv":
-                    query = $"SELECT * FROM sala WHRE naziv_sale LIKE '%{sala.NazivSale}%'";
+                case "NAZIV":
+                    query = $"SELECT * FROM sala WHERE naziv_sale LIKE '%{sala.NazivSale}%'";
                     return SveSaleInternal(query);
-                case "Kapacitet":
-                    query = $"SELECT * FROM sala WHRE kapacitet LIKE '%{sala.Kapacitet}%'";
+                case "KAPACITET":
+                    query = $"SELECT * FROM sala WHERE kapacitet ='{sala.Kapacitet}'";
                     return SveSaleInternal(query);
                 default:
                     return new List<Sala>();
