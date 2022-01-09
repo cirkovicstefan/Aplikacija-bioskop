@@ -32,8 +32,6 @@ namespace BusinessLayer
                     kapaciteSale += item.Kapacitet;
             }
 
-            var iz = from n in salaRepository.SveSale() where n.IdSale == karta.IdSale select n.Kapacitet;
-
             int brojProdatihKarata = 0;
             foreach (var item in seIgraUSaliRepository.SviSeIgraUSali())
             {
@@ -47,7 +45,7 @@ namespace BusinessLayer
             }
             foreach (var item in kartaRepository.SveKarte())
             {
-                if (item.BrojSedista == karta.BrojSedista)
+                if (item.BrojSedista == karta.BrojSedista && item.IdFilma==karta.IdFilma && item.DatumOdrzavanja==karta.DatumOdrzavanja)
                     throw new Exception("Karta sa tim brojem sedista je vec prodata");
             }
             if (kapaciteSale == brojProdatihKarata)
@@ -100,20 +98,6 @@ namespace BusinessLayer
             return kartaRepository.ZaradaFilmova();
         }
 
-        public decimal ZaradaOdFilma(string film)
-        {
-            decimal suma = 0;
-            foreach (var item in kartaRepository.SveKarte())
-            {
-                foreach (var item2 in item.ListFilmova)
-                {
-                    if (item2.Naziv.Equals(film))
-                    {
-                        suma += item.Cena;
-                    }
-                }
-            }
-            return suma;
-        }
+       
     }
 }
